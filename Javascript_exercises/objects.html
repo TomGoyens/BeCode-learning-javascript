@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="main.css" type="text/css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <title>Objects</title>
+  </head>
+  <body>
+    <ul>
+      <li>Don't forget to look at the console!</li>
+      <li><button onclick="oef1()">Oefening 1</button></li>
+      <li><button onclick="oef2()">Oefening 2</button></li>
+      <li><button onclick="oef3()">Oefening 3</button></li>
+      <li><button onclick="bonus()">Bonus</button></li>
+      <li><a href="index.html"> Home </a></li>
+    </ul>
+
+  <script type="text/javascript">
+//oefening 1
+    function oef1(){
+      let character = {
+        name : "Bob",
+        age : 66,
+        items_to_give : ["nothing", "nada", "go away"],
+        give : function(){
+          let item = Math.floor(Math.random()*3);
+          return character.items_to_give[item];
+        }
+      };
+      console.log(character.name);
+      console.log(character.age);
+      console.log(character.items_to_give);
+
+      console.log(character.give());
+    }
+//oefening 2
+    function oef2(){
+      function ShopItem(item, atk, mag, lvl, stock) {
+        this.title = item;
+        this.physical = atk;
+        this.magic = mag;
+        this.minLevel = lvl;
+        this.available = stock;
+      };
+
+      var sword = new ShopItem("sword", 18, 18, 8, true);
+      var axe = new ShopItem("Axe", 35, 0, 6, true);
+      var scepter = new ShopItem("scepter", 5, 40, 10, false);
+
+      var shop = [sword, axe, scepter];
+
+      console.log("Shop catalogue:")
+      for (i = 0; i < 3; i++){
+        console.log(shop[i]);
+      }
+
+      console.log("Current shop selection:")
+      for (i = 0; i < 3; i++){
+        if (shop[i].available){
+          console.log(shop[i]);
+        }
+      }
+
+      console.log("High level shop catalogue:")
+      for (i = 0; i < 3; i++){
+        if (shop[i].minLevel >= 10){
+          console.log(shop[i]);
+        }
+      }
+    }
+//oefening 3
+    function oef3(){
+      let bow = {
+        name : "Elven bow",
+        atk : 6,
+      }
+      let MainCharacter = {
+        name : "Jeff",
+        level : 9,
+        life : 28,
+        weapon : bow,
+        attack : function(){
+          console.log(MainCharacter.name + " valt aan met het wapen " + MainCharacter.weapon.name + ", de schade is " + (MainCharacter.level*MainCharacter.weapon.atk) + "!");
+        }
+      };
+      MainCharacter.attack();
+    }
+//bonus oefening
+    function bonus(){
+      function Character(naam, lvl, hp, wpn) {
+        this.name = naam;
+        this.level = lvl;
+        this.life = hp;
+        this.weapon = wpn;
+        this.attack = function(Enemy){
+          console.log( this.name + " valt " + Enemy.name + " aan\nmet het wapen " + this.weapon.name + ".\nDe schade is " + (this.level*this.weapon.damage) + "!");
+          Enemy.recieveDamage(this.level*this.weapon.damage);
+        };
+        this.recieveDamage = function(damage){
+          console.log( this.name + " is now at " + (this.life-damage) + "HP!");
+        };
+      };
+      function Weapon(naam, atk) {
+        this.name = naam;
+        this.damage = atk;
+      }
+      let fist = new Weapon("Solid Right", 99);
+      let bow = new Weapon("Elven Bow", 30);
+
+      let opponentCharacter = new Character("Bob", 1, 999, fist);
+      let mainCharacter = new Character("Jeff", 9, 99, bow);
+
+      console.log(mainCharacter);
+      console.log(opponentCharacter);
+
+      mainCharacter.attack(opponentCharacter);
+      console.log(opponentCharacter.name + " retaliates!");
+      opponentCharacter.attack(mainCharacter);
+      console.log("You lose!\n...wait wasn't that guy lvl 1?");
+    }
+  </script>
+  </body>
+</html>

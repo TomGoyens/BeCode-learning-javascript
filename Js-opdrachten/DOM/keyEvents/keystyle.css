@@ -1,0 +1,50 @@
+#character{
+  width: 100%;
+  height: 300px;
+}
+
+.grid{
+  display: grid;
+  grid-template: repeat(3,100px) / repeat(6, 1fr);
+}
+
+.up{
+  grid-area: 1 / 3 / span 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  background-color: darkblue;
+  color: white;
+}
+.down{
+  grid-area: 3 / 3 / span 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  background-color: darkblue;
+  color: white;
+}
+.left{
+  grid-area: 2 / 2 / span 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  background-color: darkblue;
+  color: white;
+}
+.right{
+  grid-area: 2 / 4 / span 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  background-color: darkblue;
+  color: white;
+}
+
+.highlight{
+  opacity: 0.3;
+}

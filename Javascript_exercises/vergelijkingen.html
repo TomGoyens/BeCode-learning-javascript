@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vergelijkingen</title>
+  </head>
+  <body>
+    <ul>
+      <link href="main.css" type="text/css" rel="stylesheet" />
+      <li>Don't forget to look at the console!</li>
+      <li><button onclick="oef1()">Oefening 1</button></li>
+      <li><button onclick="oef2()">Oefening 2</button></li>
+      <li><button onclick="oef3()">Oefening 3</button></li>
+      <li><a href="index.html"> Home </a></li>
+    </ul>
+
+
+  <script type="text/javascript">
+
+    function oef1(){
+      var message = prompt("which language? (nl/fr/en)");
+      if (message == "nl") {
+        alert("Hallo daar.");
+      } else if (message == "fr") {
+        alert("Bonjour, Ça va?.");
+      } else if (message == "en" ) {
+        alert("hello there.");
+      } else {
+        alert("What?");
+      }
+    }
+
+
+    function oef2(){
+      var score = prompt("what's your score?");
+      var resultaat;
+
+      if (score >= 90) {
+        resultaat = "A";
+      } else if (score < 90 && score > 50) {
+        resultaat = "B";
+      } else if (score <= 50){
+        resultaat = "C";
+      } else {
+        alert("what?");
+      }
+
+        alert("your result is: \'"+ resultaat+ "\'.");
+    }
+
+
+    function oef3(){
+      var quality = prompt("what do you have? (give a single noun pls)");
+      var quantity = prompt("how many do you have?");
+      var what
+
+      if (quantity == 1){
+        alert("you have "+quantity+" "+quality+".");
+      } else {
+        alert("you have "+quantity+" "+quality+"s.");
+      }
+    }
+
+  </script>
+  </body>
+</html>

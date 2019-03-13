@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>variabelen</title>
+  </head>
+  <body>
+    <ul>
+      <link href="main.css" type="text/css" rel="stylesheet" />
+      <li>Don't forget to look at the console!</li>
+      <li><button onclick="oef0()">Opwarming</button></li>
+      <li><button onclick="oef1()">Oefening 1</button></li>
+      <li><button onclick="oef2()">Oefening 2</button></li>
+      <li><button onclick="oef3()">Oefening 3</button></li>
+      <li><button onclick="oef4()">Oefening 4</button></li>
+      <li><a href="index.html"> Home </a></li>
+    </ul>
+
+
+  <script type="text/javascript">
+  function oef0(){
+      var first = "eerste variabele";
+      let second = "ik besta enkel tussen de krulhaakjes waar ik gedefinieerd ben!";
+      const third = "ik ben ook \'block scoped\' maar ik kan niet meer verandert worden.";
+
+      console.log("first = ", first,"\nsecond = ", second,"\nthird = "+ third);
+    }
+
+    function oef1(){
+      console.log("eerste oefening:");
+
+
+      var n = "aantal kinderen";
+      var x = "webontwikkelaar";
+      var y = "België";
+      var z = "justice";
+    }
+
+      console.log("U wordt "+x+" en woont in ",y,", en bent getrouwd met ",z," met ",n," kinderen.");
+
+    function oef2(){
+      console.log("tweede oefening:");
+
+      currentYear = prompt("what year is it?");
+      birthYear = prompt("what year were you born?");
+
+      console.log("you are ",(currentYear-birthYear)," years old.");
+    }
+
+
+    function oef3(){
+
+      currentAge = prompt("How old are you?");
+      maxAge = prompt("How old will you be when you die?");
+
+      console.log("you still have ",(maxAge-currentAge)," years to live before you probably die.");
+    }
+
+    function oef4(){
+
+      let resultaat = (1 + 2) * 3 + 4 / 2;
+
+      console.log(resultaat);
+    }
+
+  </script>
+  </body>
+</html>

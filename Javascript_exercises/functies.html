@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>functies</title>
+  </head>
+  <body>
+    <ul>
+      <link href="main.css" type="text/css" rel="stylesheet" />
+      <li>Don't forget to look at the console!</li>
+      <li><input type="number" name="a" id="a"><br><input type="number" name="b" id="b"></li>
+      <li><button onclick="subtract()">Subtract</button></li>
+      <li><button onclick="division()">Division</button></li>
+      <li><button onclick="multiplication()">Multiplication</button></li>
+      <li><button onclick="percentage()">Percentage</button></li>
+      <li><button onclick="modulo2()">Modulo 2 van 20</button></li>
+      <li><button onclick="multiplicationTable()">Multiplication table of 9</button></li>
+      <li><button onclick="gradeList()">The whole grade list</button></li>
+      <li><button onclick="pyramid()">Ascii art!</button></li>
+      <li><a href="index.html"> Home </a></li>
+    </ul>
+
+
+  <script type="text/javascript">
+
+  function getValues(){
+    let value = [0,0];
+    value[0] = document.getElementById('a').value;
+    value[1] = document.getElementById('b').value;
+    return value;
+  }
+
+
+
+// part 1
+    function subtract() {
+      let value = getValues();
+      let result = value[0]-value[1];
+      console.log(result);
+      return result;
+    }
+
+    function division(a,b) {
+      let value = getValues();
+      let result = value[0]/value[1];
+      console.log(result);
+      return result;
+    }
+    function multiplication(a,b) {
+      let value = getValues();
+      let result = value[0]*value[1];
+      console.log(result);
+      return result;
+    }
+    function percentage(a,b) {
+      let value = getValues();
+      let result = value[0]*value[1]/100;
+      console.log(result);
+      return result;
+    }
+    function speed(a,b) {
+      let value = getValues();
+      let result = value[0]-value[1]+"km/u";
+      console.log(result);
+      return result;
+    }
+
+
+
+//part 2
+
+    function modulo2() {
+      for (var i = 0; i<=20; i++){
+        if ((i%2) == 0){
+          console.log( i+" is even");
+        } else {
+          console.log( i+" is oneven");
+        }
+      }
+    }
+
+    function multiplicationTable() {
+      for (var i = 0; i<=10; i++){
+        console.log( i+" * 9 = "+(i*9));
+      }
+    }
+
+    function gradeList() {
+      for (var i = 0; i<=100; i++){
+        console.log( "Voor "+i+" punten heb je graad "+score(i)+"." );
+      }
+    }
+    function score(num) {
+      if (num > 90) {
+        return "A";
+      } else if (num > 80) {
+        return "B";
+      } else if (num > 70) {
+        return "C";
+      } else if (num > 65) {
+        return "D";
+      } else {
+        return "F";
+      }
+    }
+
+    function pyramid() {
+      let line = "";
+      for (var i = 1; i<=5; i++){
+        line += "*";
+        console.log(line);
+      }
+    }
+  </script>
+  </body>
+</html>

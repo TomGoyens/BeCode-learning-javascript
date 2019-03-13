@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="main.css" type="text/css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <title>Arrays</title>
+  </head>
+  <body>
+    <ul>
+      <li>Don't forget to look at the console!</li>
+      <li><button onclick="oef1()">Oefening 1</button></li>
+      <li><button onclick="oef2()">Oefening 2</button></li>
+      <li><button onclick="oef21()">Oefening 2.1</button></li>
+      <li><button onclick="oef3()">Oefening 3</button></li>
+      <li><a href="index.html"> Home </a></li>
+    <ul>
+
+  <script type="text/javascript">
+//oefening 1
+    function oef1() {
+      count = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9];
+      var sum = 0;
+      for (var i = 0; i < 9; i++) {
+        sum += count[i];
+      }
+      console.log("de sum of",count,"is:");
+      console.log(sum);
+    }
+//oefening 2
+    function oef2() {
+      celeb = ["Tom","Daniel","Rupert"];
+      for (var i = 0; i < celeb.length; i++) {
+        console.log("Nummer " + i + " is " + celeb[i] + ".");
+      }
+    }
+//oefening 2.1
+    function oef21() {
+      celeb = ["Tom","Daniel","Rupert"];
+      for (var i = 0; i < celeb.length; i++) {
+        if (i == 1){
+          place="eerste"
+        } else if (i == 2){
+          place="tweede"
+        } else {
+          place="derde"
+        }
+        console.log("de " + place + " is " + celeb[i] + ".");
+      }
+    }
+//oefening 3
+    function oef3() {
+
+    var bros = ["Mario", "Luigi", "Peach"]
+
+    var bros2 = bros.slice(0);
+
+    bros2.push("Bowser");
+
+    console.log("super Array: " + bros + "\nsuper Array 2 - electric boogaloo: " + bros2);
+
+    }
+  </script>
+  </body>
+</html>
